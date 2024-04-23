@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
   <link rel="stylesheet" href="./Styles/index.css" />
+  <link rel="stylesheet" href="./Styles/login.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -39,8 +40,16 @@
   </nav>
 
   <div id="loginContainer">
-    <h1>Login Form</h1>
     <!-- add form with input for email and password -->
+    <form id="loginForm">
+      <h1>Login Form</h1>
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button type="submit">Login</button>
+      <div class="newUser-container">
+        <a href="signUp.html" class="new-user">New User</a>
+      </div>
+    </form>
   </div>
 
 </body>
