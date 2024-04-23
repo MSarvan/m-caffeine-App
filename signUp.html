@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign up</title>
   <link rel="stylesheet" href="./Styles/index.css" />
+  <link rel="stylesheet" href="./Styles/signup.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -41,9 +42,15 @@
 
 
   <div id="signUpContainer">
-    <h1>SignUp Form</h1>
     <!-- add SignUp form here with input for fullname, email, phone and password -->
-    
+    <form id=signUpForm>
+      <h1>SignUp Form</h1>
+      <input type="text" id="fullname" placeholder="Fullname">
+      <input type="email" id="email" placeholder="Email">
+      <input type="number" id="phone" placeholder="Phone">
+      <input type="text" id="password" placeholder="Password">
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </body>
 <script src="./Scripts/signUp.js"></script>
