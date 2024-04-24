@@ -1,0 +1,51 @@
+#bodyCareContainer {
+  /* border: 1px solid red; */
+  width: 100%;
+  /* height: calc(100% - 60px); */
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.product {
+  width: calc((100% - 6rem) / 4);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  height: fit-content;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.11);
+}
+
+.img-container {
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+}
+
+.productName {
+  height: 3rem;
+}
+
+.price-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  background-color: aquamarine;
+  border-radius: 10px;
+}

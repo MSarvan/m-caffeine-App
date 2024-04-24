@@ -47,4 +47,51 @@ const bodyCareData = [
 // append to this div
 let bodyCareContainer = document.getElementById("bodyCareContainer");
 
+const productDivs = bodyCareData.map((item) => {
+  let productDiv = document.createElement("div");
+  productDiv.classList.add("product");
 
+  let imgContainer = document.createElement("div");
+  imgContainer.classList.add("img-container");
+
+  let img = document.createElement("img");
+  img.classList.add("productImg");
+  img.src = item.img;
+  img.alt = item.name;
+
+  let productName = document.createElement("p");
+  productName.classList.add("productName");
+  productName.textContent = item.name;
+
+  let priceContainer = document.createElement("div");
+  priceContainer.classList.add("price-container");
+
+  let originalPrice = document.createElement("p");
+  originalPrice.classList.add("originalPrice");
+  originalPrice.textContent = item.originalPrice;
+
+  let discountedPrice = document.createElement("p");
+  discountedPrice.classList.add("discountedPrice");
+  discountedPrice.textContent = item.discountedPrice;
+
+  let addToCartDiv = document.createElement("button");
+  addToCartDiv.textContent = "Add to Cart";
+  addToCartDiv.classList.add("add-to-cart");
+
+  imgContainer.appendChild(img);
+  priceContainer.appendChild(discountedPrice);
+  priceContainer.appendChild(originalPrice);
+
+
+  productDiv.appendChild(imgContainer);
+  productDiv.appendChild(productName);
+  productDiv.appendChild(priceContainer);
+  productDiv.appendChild(addToCartDiv);
+
+  // Return the productDiv
+  return productDiv;
+});
+
+productDivs.forEach((productDiv) => {
+  bodyCareContainer.appendChild(productDiv);
+});

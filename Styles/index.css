@@ -1,6 +1,7 @@
 /* navbar CSS */
 * {
   font-family: "PT Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 nav > div > h1,
