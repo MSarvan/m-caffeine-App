@@ -44,6 +44,19 @@ const faceCareData = [
   },
 ];
 
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = document.getElementById("cartCount");
+  cartCount.textContent = cart.length;
+}
+
+function addToCart(item) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(item);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
 const userFound = JSON.parse(localStorage.getItem("userInfo"));
 
 if (!userFound) {
@@ -55,48 +68,53 @@ if (!userFound) {
   const productDivs = faceCareData.map((item) => {
     let productDiv = document.createElement("div");
     productDiv.classList.add("product");
-  
+
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("img-container");
-  
+
     let img = document.createElement("img");
     img.classList.add("productImg");
     img.src = item.img;
     img.alt = item.name;
-  
+
     let productName = document.createElement("p");
     productName.classList.add("productName");
     productName.textContent = item.name;
-  
+
     let priceContainer = document.createElement("div");
     priceContainer.classList.add("price-container");
-  
+
     let originalPrice = document.createElement("p");
     originalPrice.classList.add("originalPrice");
     originalPrice.textContent = item.originalPrice;
-  
+
     let discountedPrice = document.createElement("p");
     discountedPrice.classList.add("discountedPrice");
     discountedPrice.textContent = item.discountedPrice;
-  
+
     let addToCartDiv = document.createElement("button");
     addToCartDiv.textContent = "Add to Cart";
     addToCartDiv.classList.add("add-to-cart");
-  
+
+    addToCartDiv.addEventListener("click", () => {
+      addToCart(item);
+    });
+
     imgContainer.appendChild(img);
     priceContainer.appendChild(discountedPrice);
     priceContainer.appendChild(originalPrice);
-  
-  
+
     productDiv.appendChild(imgContainer);
     productDiv.appendChild(productName);
     productDiv.appendChild(priceContainer);
     productDiv.appendChild(addToCartDiv);
-  
+
     return productDiv;
   });
-  
+
   productDivs.forEach((productDiv) => {
     faceCareContainer.appendChild(productDiv);
   });
+
+  updateCartCount();
 }

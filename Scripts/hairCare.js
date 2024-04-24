@@ -44,6 +44,19 @@ const hairCareData = [
   },
 ];
 
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = document.getElementById("cartCount");
+  cartCount.textContent = cart.length;
+}
+
+function addToCart(item) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(item);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
 const userFound = JSON.parse(localStorage.getItem("userInfo"));
 
 if (!userFound) {
@@ -83,6 +96,10 @@ if (!userFound) {
     addToCartDiv.textContent = "Add to Cart";
     addToCartDiv.classList.add("add-to-cart");
 
+    addToCartDiv.addEventListener("click", () => {
+      addToCart(item);
+    });
+
     imgContainer.appendChild(img);
     priceContainer.appendChild(discountedPrice);
     priceContainer.appendChild(originalPrice);
@@ -98,4 +115,6 @@ if (!userFound) {
   productDivs.forEach((productDiv) => {
     hairCareContainer.appendChild(productDiv);
   });
+
+  updateCartCount();
 }
