@@ -1,7 +1,14 @@
 #bodyCareContainer {
-  /* border: 1px solid red; */
   width: 100%;
-  /* height: calc(100% - 60px); */
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+#faceCareContainer {
+  width: 100%;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
