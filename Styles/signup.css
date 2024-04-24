@@ -36,9 +36,10 @@ input {
 }
 
 button {
-  color: white;
-  background-color: blue;
+  background-color: #73cdc1;
   cursor: pointer;
+  border: none;
+  font-weight: 600;
 }
 
 .already-container {

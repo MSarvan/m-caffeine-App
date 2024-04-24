@@ -56,3 +56,22 @@ a {
 .heroImg {
   width: 100%;
 }
+
+.logoutContainer {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.logout {
+  padding: 0.5rem 1.5rem;
+  background: orangered;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
