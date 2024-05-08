@@ -13,7 +13,7 @@ loginForm.addEventListener("submit", function (event) {
     const confirmation = confirm("User Logged in successfully!");
 
     if (confirmation) {
-      window.location.href = "index.html";
+      window.location.href = "bodyCare.html";
     }
   } else {
     alert("Incorrect credentials");
